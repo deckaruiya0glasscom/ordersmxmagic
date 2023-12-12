@@ -1,1 +1,1 @@
-var dbaseURL =  'https://xamlak3.oo.gd/orders.mx.magic/private/';
+var dbaseURL =  'https://ordersmxmagic.com.ng/orders.mx.magic/private/';
